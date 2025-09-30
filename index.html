@@ -1,11 +1,66 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base DeFi APR Finder</title>
+
+  <!-- Шрифт -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Небольшой современный CSS без библиотек -->
+  <style>
+    :root{
+      --bg:#0b0f14;        /* тёмный фон */
+      --card:#111827;      /* карточка */
+      --muted:#94a3b8;     /* вторичный текст */
+      --text:#e5e7eb;      /* основной текст */
+      --accent:#3b82f6;    /* акцент (синие кнопки/линки) */
+      --border:#1f2937;    /* границы */
+      --chip:#0f172a;      /* бейджи */
+      --success:#10b981;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family:Inter,system-ui,Arial,sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, #0b1b33 0%, transparent 60%) , var(--bg);
+      color:var(--text);
+    }
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    .title{font-size:32px;font-weight:800;letter-spacing:-.02em;margin:0 0 16px}
+    .controls{
+      display:grid;gap:12px;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      padding:16px;border:1px solid var(--border);border-radius:16px;background:#0b1220aa;backdrop-filter: blur(4px);
+      margin-bottom:16px;
+    }
+    .label{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .input,.select,.btn{
+      width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
+      background: #0b1322;color:var(--text);outline:none;
+    }
+    .btn{cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .btn.ghost{background:transparent}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .chip{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:var(--chip);color:var(--muted)}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    .card{border:1px solid var(--border);background:var(--card);border-radius:16px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .card h3{margin:0 0 6px;font-size:16px;font-weight:700}
+    .stat{background:#0c1628;border:1px solid var(--border);border-radius:12px;padding:10px}
+    .stat .k{font-size:11px;color:var(--muted);text-transform:uppercase}
+    .stat .v{font-weight:700}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .row{display:flex;gap:8px;margin-top:10px}
+    a.link{display:inline-block;text-decoration:none}
+    .link.btn{display:inline-flex;align-items:center;justify-content:center}
+    .muted{color:var(--muted);font-size:12px;margin-top:10px}
+    .green{color:var(--success)}
+  </style>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
